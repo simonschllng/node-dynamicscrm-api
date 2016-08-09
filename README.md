@@ -2,14 +2,12 @@
 This node module provides a set of methods to interact with MS Dynamics CRM Online services.
 This is a pure SOAP proxy that supports LiveId authentication.
 
-The module was created as part of [KidoZen](http://www.kidozen.com) project, as a connector for its Enterprise API feature.
-
 ## Installation
 
 Use npm to install the module:
 
 ```
-> npm install dynamicscrm-api
+> npm install dynamics-crm-xrm
 ```
 
 ## API
@@ -31,6 +29,9 @@ The module exports a class and its constructor requires a configuration object w
 * `organizationid`: Required string. Sign in to your CRM org and click Settings, Customization, Developer Resources. On Developer Resource page, find the organization unique name under Your Organization Information.
 * `username`: Optional dynamics Online's user name.
 * `password`: Optional user's password.
+* `useHttp`: Optional to use http instead of https.
+* `defaultUrlSuffix`: Optional boolean parameter to  cancel adding ".api.crm.dynamics.com" as a default suffix for domain
+* `domainUrlSuffix`: Optional parameter to replace url suffix with custom usrl
 * `returnJson`: Optional, default value is "true". Transforms the CRM XML Service response to a clean JSON response without namespaces.
 * `discoveryServiceAddress`: Optional. You should not change this value unless you are sure. default value is "https://dev.crm.dynamics.com/XRMServices/2011/Discovery.svc"
 
@@ -101,7 +102,7 @@ This method should be used to update an entity.
 ```
 	var options = {};
 	options.id = '00000000-dddd-eeee-iiii-111111111111';	
-	options.Attributes = [ { key:'companyname' , value :'Kidozen'}];
+	options.Attributes = [ { key:'companyname' , value :'XYZ'}];
 	options.LogicalName = 'lead';
 
 	dynamics.Update(options, function(err, result) 
@@ -243,7 +244,7 @@ This method should be used to create a relation between entities.
 
 #License 
 
-Copyright (c) 2013 KidoZen, inc.
+Copyright (c) 2016 Pradeep.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
