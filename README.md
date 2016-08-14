@@ -26,22 +26,31 @@ function callback (err, data) {
 The module exports a class and its constructor requires a configuration object with following properties
 
 * `domain`: Required string. Provide domain name for the On-Premises org. 
-* `organizationid`: Required string. Sign in to your CRM org and click Settings, Customization, Developer Resources. On Developer Resource page, find the organization unique name under Your Organization Information.
+* `organizationName`: Required string, name of organization. Sign in to your CRM org and click Settings, Customization, Developer Resources. On Developer Resource page, find the organization unique name under Your Organization Information.
 * `username`: Optional dynamics Online's user name.
 * `password`: Optional user's password.
+*  `authType`: Optional string, Authentication type, value can be any of these microsoft_online, federation, ntlm, live_id .
 * `useHttp`: Optional to use http instead of https.
+* `port`: Number, Optional specify port number.
 * `defaultUrlSuffix`: Optional boolean parameter to  cancel adding ".api.crm.dynamics.com" as a default suffix for domain
-* `domainUrlSuffix`: Optional parameter to replace url suffix with custom usrl
+* `domainUrlSuffix`: Optional parameter to replace url suffix with custom url
 * `returnJson`: Optional, default value is "true". Transforms the CRM XML Service response to a clean JSON response without namespaces.
 * `discoveryServiceAddress`: Optional. You should not change this value unless you are sure. default value is "https://dev.crm.dynamics.com/XRMServices/2011/Discovery.svc"
 
 ```
-var dynamics = require("dynamicscrm-api");
-var dynamics = new dynamics({ 
-	domain: "mycompany", 
-	organizationid: "e00000ee0e000e0e00ee0eeee0e0e0ee",
-	timeout: 5*60*1000 	// Timeout of 5 minutes
+var Dynamics = require("dynamicscrm-api");
+var dynamics = new Dynamics({ 
+	domain : "mydomain or myIP", 
+    organizationName : "myOrg",
+    timeout : 2*60*1000,  // timeout 2 minutes
+    returnJson : true, // return response in json
+    authType : "ntlm", // authentication type ntlm to access resource useing xrm soap api
+    username :"myUsername", 
+    password : "myPassword" , 
+    defaultUrlSuffix : false, // to remove .crm.dynamics.com as a suffix for domain, useful in case of self hosted crm
+    useHttp : true // to use http or https
 });
+
 ```
 
 ### Methods
