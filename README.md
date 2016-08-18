@@ -5,6 +5,7 @@ This is a pure SOAP proxy that supports LiveId authentication.
 This module is fork of [dynamicscrm-api](https://www.npmjs.com/package/dynamicscrm-api)
 which was created as part of [KidoZen](http://www.kidozen.com) project, as a connector for its Enterprise API feature.
 
+###### This Module is forked and changed for personal use only, so use it on your own risk.
 
 
 ## Installation
