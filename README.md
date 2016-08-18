@@ -2,8 +2,8 @@
 This node module provides a set of methods to interact with MS Dynamics CRM Online services.
 This is a pure SOAP proxy that supports LiveId authentication.
 
-
-The module was created as part of [KidoZen](http://www.kidozen.com) project, as a connector for its Enterprise API feature.
+This module is fork of [dynamicscrm-api](https://www.npmjs.com/package/dynamicscrm-api)
+which was created as part of [KidoZen](http://www.kidozen.com) project, as a connector for its Enterprise API feature.
 
 
 
