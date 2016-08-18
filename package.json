@@ -1,6 +1,6 @@
 {
     "name": "dynamics-crm-xrm",
-    "version": "1.0.8",
+    "version": "1.0.9",
     "description": "Pure SOAP module that allows to invoke Microsoft Dynamics CRM Online services",
     "author": "Kidozen <support@kidozen.com>",
     "main": "index.js",
