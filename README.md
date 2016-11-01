@@ -44,7 +44,7 @@ The module exports a class and its constructor requires a configuration object w
 * `discoveryServiceAddress`: Optional. You should not change this value unless you are sure. default value is "https://dev.crm.dynamics.com/XRMServices/2011/Discovery.svc"
 
 ```
-var Dynamics = require("dynamicscrm-api");
+var Dynamics = require("dynamics-crm-xrm");
 var dynamics = new Dynamics({ 
 	domain : "mydomain or myIP", 
     organizationName : "myOrg",
